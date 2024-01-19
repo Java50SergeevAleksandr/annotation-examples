@@ -3,7 +3,7 @@ package telran.x;
 import telran.reflect.Id;
 import telran.reflect.Index;
 
-public class PersonNomal {
+public class PersonNormal {
 	@Id
 	int id = 0;
 	@Index

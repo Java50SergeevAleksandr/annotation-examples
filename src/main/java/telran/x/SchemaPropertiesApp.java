@@ -4,15 +4,23 @@ import telran.reflect.ShemaProperties;
 
 public class SchemaPropertiesApp {
 	public static void main(String[] args) {
-		PersonNomal np = new PersonNomal();
-		PersonNoId noId = new PersonNoId();
-		PersonTwoId twoId = new PersonTwoId();
 		try {
-			ShemaProperties.displayFieldProperties(np);
-			ShemaProperties.displayFieldProperties(noId);
-			ShemaProperties.displayFieldProperties(twoId);
+			ShemaProperties.displayFieldProperties(new PersonNormal());
 		} catch (Exception e) {
-			e.printStackTrace();
+			throw new RuntimeException("error: PersonNormal must no throw any exceptions");
 		}
+		try {
+			ShemaProperties.displayFieldProperties(new PersonNoId());
+			throw new RuntimeException("error: PersonNoId must throw IllegalStateException");
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+		}
+		try {
+			ShemaProperties.displayFieldProperties(new PersonTwoId());
+			throw new RuntimeException("error: PersonTwoId must throw IllegalStateException");
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+		}
+
 	}
 }
