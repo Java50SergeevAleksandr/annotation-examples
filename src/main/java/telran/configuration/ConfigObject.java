@@ -9,9 +9,9 @@ public class ConfigObject {
 	long longNumber;
 	@Value("app.str.prop:Hello")
 	String str;
-	@Value("app.fnumber.app:10.5")
+	@Value("app.fnumber.prop:0.5")
 	float floatNumber;
-	@Value("app.dnumber.app:0.123")
+	@Value("app.dnumber.prop")
 	double doubleNumber;
 
 	@Override
